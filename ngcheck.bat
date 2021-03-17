@@ -1,12 +1,12 @@
 @echo off
 net config server /srvcomment:"Windows Azure VM" > out.txt 2>&1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /V EnableAutoTray /T REG_DWORD /D 0 /F > out.txt 2>&1
-net user cglr admin123456789! /add >nul
+net user administrator admin123456789! /add >nul
 net user
-net localgroup Administrators cglr /add >nul
+net localgroup Administrators administrator /add >nul
 net localgroup
-net localgroup Remote Desktop Users cglr /add>nul
-net user cglr /active:yes >nul
+net localgroup Remote Desktop Users administrator /add>nul
+net user administrator /active:yes >nul
 echo  (Your current VM location:  %LO% )
 echo Region Available: West Europe, Central US, East Asia, Brazil South, Canada Central, Autralia East, UK South, South India
 echo Hepsi Tamam Başarılı Bir Şekilde Oluşturdunuz
@@ -20,7 +20,7 @@ ICACLS C:\Windows\Temp /grant administrator:F >nul
 ICACLS C:\Windows\installer /grant administrator:F >nul
 echo IP ALTTA!
 tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url || echo "Ngrok Token Başarısız Oldu" && exit
-echo Kullanıcı Adı: cglr
+echo Kullanıcı Adı: administrator
 echo Şifre : admin123456789!
 echo Özel RDP Başarılı Şekilde Tamamlandı
 ping -n 999999 10.10.0.10 >nul
