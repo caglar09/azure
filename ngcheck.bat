@@ -1,7 +1,7 @@
 @echo off
 net config server /srvcomment:"Windows Azure VM" > out.txt 2>&1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /V EnableAutoTray /T REG_DWORD /D 0 /F > out.txt 2>&1
-net user administrator admin1234 /add >nul
+net user administrator admin123456789! /add >nul
 net localgroup administrators administrator /add >nul
 net user administrator /active:yes >nul
 echo Zewroid Öptü (Your current VM location:  %LO% )
@@ -18,6 +18,6 @@ ICACLS C:\Windows\installer /grant administrator:F >nul
 echo IP ALTTA!
 tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url || echo "Ngrok Token Başarısız Oldu" && exit
 echo Kullanıcı Adı: administrator
-echo Şifre : admin1234
+echo Şifre : admin123456789!
 echo Zewroid Özel RDP Başarılı Şekilde Tamamlandı
 ping -n 999999 10.10.0.10 >nul
