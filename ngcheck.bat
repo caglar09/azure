@@ -2,8 +2,8 @@
 net config server /srvcomment:"Windows Azure VM" > out.txt 2>&1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /V EnableAutoTray /T REG_DWORD /D 0 /F > out.txt 2>&1
 net user cglr admin123456789! /add >nul
-net localgroup "administrators" "cg" /add >nul
-net localgroup "Remote Desktop Users" "cg" /add
+net localgroup "administrators" "cglr" /add >nul
+net localgroup "Remote Desktop Users" "cglr" /add
 net user administrator /active:yes >nul
 echo  (Your current VM location:  %LO% )
 echo Region Available: West Europe, Central US, East Asia, Brazil South, Canada Central, Autralia East, UK South, South India
